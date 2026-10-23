@@ -17,6 +17,7 @@
   $$('.nav a').forEach(function (a) { a.addEventListener('click', function () { nav.classList.remove('open'); }); });
 
   var page = location.pathname.split('/').pop() || 'index.html';
+  if (page.indexOf('article-') === 0) page = 'insights.html';
   $$('.nav a').forEach(function (a) {
     if (a.getAttribute('href') === page) a.classList.add('active');
   });
