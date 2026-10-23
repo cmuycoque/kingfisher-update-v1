@@ -216,3 +216,22 @@ footer .logo{display:inline-flex;align-items:center;gap:10px}
 .chart .ct{font:700 1rem "Raleway",sans-serif;color:var(--green);margin-bottom:10px}
 .chart text{font-family:"Open Sans",sans-serif;fill:#3b4a45}
 @media(max-width:560px){.article .lead:first-letter{font-size:2.6rem}.chart{padding:16px 12px 10px}}
+
+/* round 4: three stats + responsive polish */
+.stats .grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:900px;margin:0 auto}
+img,svg{max-width:100%}
+@media (max-width:992px){
+.stats .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+footer .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+.stats .grid{grid-template-columns:minmax(0,1fr);gap:22px}
+.stat b{font-size:2.1rem}
+footer .grid{grid-template-columns:minmax(0,1fr);gap:28px}
+.g4,.g3,.g2{grid-template-columns:minmax(0,1fr)}
+.page-hero h1{font-size:1.7rem}
+.article{padding:0 4px}
+.card .top{padding-bottom:12px}
+}
+@media (max-width:380px){.page-hero h1{font-size:1.5rem}.btn{padding:11px 18px}}
