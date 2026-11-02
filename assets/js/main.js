@@ -75,7 +75,7 @@
       note.textContent = 'Sending...';
       fetch('/contact.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) { if (!r.ok) throw new Error(); form.reset(); note.textContent = 'Thanks! Your message has been sent.'; })
-        .catch(function () { note.textContent = 'Sorry, something went wrong. Please email us at kingfisherandkite@gmail.com.'; })
+        .catch(function () { note.textContent = 'Sorry, something went wrong. Please email us at hello@kingfisherandkite.com.'; })
         .then(function () { btn.disabled = false; });
     });
   }

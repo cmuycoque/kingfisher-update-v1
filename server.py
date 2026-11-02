@@ -20,7 +20,7 @@ def load_env():
 
 load_env()
 TO_EMAIL = os.environ.get("CONTACT_TO_EMAIL", "matthewuycoque@gmail.com")
-FROM_EMAIL = os.environ.get("CONTACT_FROM_EMAIL", "Kingfisher & Kite <onboarding@resend.dev>")
+FROM_EMAIL = os.environ.get("CONTACT_FROM_EMAIL", "Kingfisher & Kite <noreply@kingfisherandkite.com>")
 
 
 class Handler(SimpleHTTPRequestHandler):
