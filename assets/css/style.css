@@ -120,7 +120,7 @@ details p{padding-bottom:20px;margin:0;color:var(--muted)}
 
 /* contact */
 .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
-.info{display:grid;gap:18px}
+.info{display:grid;gap:18px;align-content:start;align-self:start}
 .info .card{flex-direction:row;gap:18px;align-items:center;padding:22px}
 .info .icon{margin:0}
 .info h3{margin:0 0 2px;font-size:1rem}
