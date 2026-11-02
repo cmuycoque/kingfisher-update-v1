@@ -68,10 +68,15 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var d = new FormData(form);
-      var body = 'Name: ' + d.get('name') + '\nCompany: ' + d.get('company') + '\nEmail: ' + d.get('email') + '\n\n' + d.get('message');
-      location.href = 'mailto:kingfisherandkite@gmail.com?subject=' + encodeURIComponent('Inquiry: ' + d.get('service')) + '&body=' + encodeURIComponent(body);
-      $('.note', form).textContent = 'Thanks! Your email app should open with your message ready to send.';
+      var note = $('.note', form), btn = $('button[type=submit]', form);
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      btn.disabled = true;
+      note.textContent = 'Sending...';
+      fetch('/contact.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { if (!r.ok) throw new Error(); form.reset(); note.textContent = 'Thanks! Your message has been sent.'; })
+        .catch(function () { note.textContent = 'Sorry, something went wrong. Please email us at kingfisherandkite@gmail.com.'; })
+        .then(function () { btn.disabled = false; });
     });
   }
 })();
